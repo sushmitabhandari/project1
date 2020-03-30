@@ -1,5 +1,5 @@
 variable "ami_id" {
-  description = "AMI ID"sg-0659fb504c0a46352
+  description = "AMI ID"
   default = "ami-0620d12a9cf777c87"
 }
 
