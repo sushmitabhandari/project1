@@ -6,20 +6,15 @@ resource "aws_instance" "master" {
   subnet_id                   = "subnet-001d87dc84073b441"
   associate_public_ip_address = "true"
   
-  provisioner "remote-exec" {
-    inline = [
-      "sudo su",
-      "sudo apt-get update",
-      "sudo apt-get install docker.io -y",
-      "sudo service docker start",
-      "sudo docker run -itd --name -p 80:80 nginx" 
-      
-    ]
-  }
-  provisioner "file" {
-    source = "proj"
-    destination = "/home/ubuntu/"
-  }
+  user_data = << EOF
+		#! /bin/bash
+    sudo su  
+    sudo apt-get update
+		sudo apt-get install docker -y
+		sudo systemctl start docker
+		sudo docker run -itd -p 80:80 nginx
+	EOF
+  
   tags = { 
     Name = "master"
   }
