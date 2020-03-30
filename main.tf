@@ -5,7 +5,7 @@ resource "aws_instance" "master" {
   security_groups      = ["sg-0659fb504c0a46352"]
   subnet_id                   = "subnet-001d87dc84073b441"
   associate_public_ip_address = "true"
-  user_data = "{file.("user.sh")}"
+  user_data = "${file.("user.sh")}"
   tags = { 
     Name = "master1"
   }
