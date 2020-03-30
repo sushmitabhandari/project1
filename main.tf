@@ -10,8 +10,8 @@ resource "aws_instance" "master" {
         sudo su
 		sudo apt-get update
 		sudo touch /home/ubuntu/make.c
-		sudo apt-get install -y docker
-		sudo systemctl start docker
+		sudo apt-get install docker.io -y
+		sudo systemctl start docker.io
 	EOF
   tags = { 
     Name = "master1"
