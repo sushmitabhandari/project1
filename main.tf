@@ -3,7 +3,7 @@ resource "aws_instance" "master" {
   instance_type = "t2.micro"
   key_name                    = "home"
   security_groups      = ["sg-0659fb504c0a46352"]
-  subnet_id                   = "var.subnet1"
+  subnet_id                   = ["subnet-001d87dc84073b441"]
   associate_public_ip_address = "true"
   
   provisioner "remote-exec" {
