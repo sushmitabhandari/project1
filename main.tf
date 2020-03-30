@@ -5,10 +5,7 @@ resource "aws_instance" "master" {
   vpc_security_group_ids      = var.security_group
   subnet_id                   = var.subnet1
   associate_public_ip_address = "true"
-  connection {
-    user = "ubuntu"
-    key_file = "ssh/key"
-  }
+  
   provisioner "remote-exec" {
     inline = [
       "sudo su",
