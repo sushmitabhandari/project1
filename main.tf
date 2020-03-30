@@ -3,7 +3,7 @@ resource "aws_instance" "master" {
   instance_type = "t2.micro"
   key_name                    = "home"
   vpc_security_group_ids      = 
-  subnet_id                   = "${aws_subnet.dwe-subnet.id}"
+  subnet_id                   = "${var.subnet1}"
   associate_public_ip_address = "true"
   connection {
     user = "ubuntu"
