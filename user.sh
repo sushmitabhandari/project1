@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo su
 sudo apt-get update
+sudo touch make.txt
 sudo apt-get install docker.io -y
 service docker start
 docker pull nginx
