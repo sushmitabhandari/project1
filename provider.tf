@@ -1,5 +1,6 @@
 provider "aws" {
   profile    = "test"
   region     = "ap-south-1"
-  shared_credentials_file = "/root/.aws/credentials"
+  access_key = "AKIAICLZRAZOCSBHFFGA"
+  secret_key = "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"
 }
