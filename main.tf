@@ -1,9 +1,9 @@
 resource "aws_instance" "master" {
   ami           = "ami-0620d12a9cf777c87"
   instance_type = "t2.medium"
-  key_name                    = "home"
-  security_groups      = ["sg-0659fb504c0a46352"]
-  subnet_id                   = "subnet-001d87dc84073b441"
+  key_name                    = "rama"
+  security_groups      = ["sg-0d356f69a3363d363"]
+  subnet_id                   = "subnet-0392c69b6c60966e5"
   associate_public_ip_address = "true"
   user_data = <<-EOF
 		#!/bin/bash
@@ -26,9 +26,9 @@ resource "aws_instance" "master" {
 resource "aws_instance" "slave" {
   ami           = "ami-0620d12a9cf777c87"
   instance_type = "t2.micro"
-  key_name                    = "home"
-  security_groups      = ["sg-0659fb504c0a46352"]
-  subnet_id                   = "subnet-001d87dc84073b441"
+  key_name                    = "rama"
+  security_groups      = ["sg-0d356f69a3363d363"]
+  subnet_id                   = "subnet-0392c69b6c60966e5"
   associate_public_ip_address = "true"
   user_data = <<-EOF
 		#!/bin/bash
